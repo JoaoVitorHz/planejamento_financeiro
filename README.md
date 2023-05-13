@@ -2,4 +2,7 @@
 Olá, esse é um exercicio de logica de programação usando Java que recebi na faculdade e decidi colocar aqui no gitHub. 
 
 ## Enunciado do Exercicio
-1) Criar um programa que calcule a média de salários de uma empresa, pedindo ao usuário a grade de funcionários e os salários, e devolvendo a média salarial.
+2) Tem-se um conjunto de dados contendo a altura e o sexo (masculino, feminino) de 10 pessoas. Fazer um algoritmo que calcule e escreva:
+- a) a maior e a menor altura do grupo;
+- b) média de altura dos homens;
+- c) o número de mulheres.

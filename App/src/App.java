@@ -1,40 +1,31 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-       
-        Random r = new Random();
-        int valor = r.nextInt(100) + 1;
+        double soma = 0;
+        int qtdFuncionarios = 0;
 
-        Scanner entrada = new Scanner(System.in);
-
-        for(int i = 1; i <= 5; i++){
-
-            System.out.println("Qual foi o número sorteado pelo computador?");
-            int valorUser = entrada.nextInt();
-
-            if(valorUser == valor){
-                System.out.println("Parabéns, você ganhou o jogo!");
+        while(true){
+            double resposta = exibirMsg();
+            if(resposta == -1)
                 break;
-            } 
-            else {
-                if(i == 5){
-                    System.out.println("Game Over!");
-                    break;
-                }
 
-                if((valorUser - 1) == valor || (valorUser + 1) == valor){
-                    System.out.println("TÁ QUENTE!");
-                } else {
-                    if(valorUser < valor){
-                        System.out.println("O número digitado é menor do que o número sorteado!");
-                    } 
-                    else{
-                        System.out.println("O número digitado é maior do que o número sorteado!");
-                    }
-                }
-            }
+            soma += resposta;
+            qtdFuncionarios++;
         }
+        System.out.println("A media salarial é de: " + media(soma, qtdFuncionarios));
     }
-} 
+
+    public static double exibirMsg(){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Informe o salario! Caso queira sair digite -1");
+        double teste = entrada.nextDouble();
+        entrada.close();
+        
+        return teste;
+    }
+
+    public static double media(double valor, double funcionarios){
+        return valor / funcionarios;
+    }
+}

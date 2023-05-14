@@ -1,16 +1,32 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-       
-            Scanner entrada = new Scanner(System.in);
 
-            System.out.println("Informe uma temperatura em celsius");
-            double temperatura = entrada.nextDouble();
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-            System.out.println("Kelvim = " + (temperatura + 273.15));
-            System.out.println("Réaumur  = " + (temperatura * 0.8));
-            System.out.println("Rankine  = " + (temperatura  * 1.8));
-            System.out.println("Fahrenheit   = " + (temperatura  * 1.8 + 32));
+        double metaAlcancada = 0;
+        double contribuicaoMensal = 0;
+        double taxaJuros = 0;
+
+        System.out.println("Digite a meta a ser alcançada");
+        metaAlcancada = input.nextInt();
+
+        System.out.println("Digite a contribuição mensal");
+        contribuicaoMensal = input.nextInt();
+
+        System.out.println("Digite a taxa de juros");
+        taxaJuros = input.nextInt();
+
+        int anos = 0;
+
+        for (double i = contribuicaoMensal; i < metaAlcancada; i += contribuicaoMensal) {
+
+            double valorJuro = (taxaJuros * i) / 100;
+            i = i + valorJuro;
+
+            anos++;
+        }
+        System.out.println("falta " + anos + " anos");
     }
 }
